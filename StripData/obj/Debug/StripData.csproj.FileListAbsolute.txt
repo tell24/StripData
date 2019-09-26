@@ -1,0 +1,10 @@
+E:\Projects\VS2017\StripData\StripData\bin\Debug\StripData.exe.config
+E:\Projects\VS2017\StripData\StripData\bin\Debug\StripData.exe
+E:\Projects\VS2017\StripData\StripData\bin\Debug\StripData.pdb
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.csprojAssemblyReference.cache
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.Form1.resources
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.Properties.Resources.resources
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.csproj.GenerateResource.cache
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.csproj.CoreCompileInputs.cache
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.exe
+E:\Projects\VS2017\StripData\StripData\obj\Debug\StripData.pdb
