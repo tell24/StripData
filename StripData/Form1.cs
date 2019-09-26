@@ -34,29 +34,30 @@ namespace StripData
         {
             string line = "";
             int lines = 0;
-                //Pass the file path and file name to the StreamReader constructor
-                StreamReader sr = new StreamReader(textBox1.Text);
-                //Read the first line of text
+            //Pass the file path and file name to the StreamReader constructor
+            StreamReader sr = new StreamReader(textBox1.Text);
+            //Read the first line of text
+            line = sr.ReadLine();
+
+            //Continue to read until you reach end of file
+            while (line != null)
+            {
+                //write the lie to console window
+                //  Console.WriteLine(line);
+                lines++;//Read the next line
                 line = sr.ReadLine();
+            }
 
-                //Continue to read until you reach end of file
-                while (line != null)
-                {
-                    //write the lie to console window
-                    //  Console.WriteLine(line);
-                    lines++;//Read the next line
-                    line = sr.ReadLine();
-                }
-
-                //close the file
-                sr.Close();
-                //   Console.ReadLine();
+            //close the file
+            sr.Close();
+            //   Console.ReadLine();
             textBox3.Text = lines.ToString();
             textBox3.Update();
 
-            Single gap = lines / Int16.Parse(textBox4.Text);
+            Single gap = (Single)lines / Single.Parse(textBox4.Text);
             int rl = 0;
             int ol = 0;
+            String line_new;
             using (StreamWriter sw = new StreamWriter(textBox2.Text))
             {
                 sr = new StreamReader(textBox1.Text);
@@ -78,23 +79,24 @@ namespace StripData
                 while (line != null)
                 {
                     ol++;
-                    while (ol < (rl * gap)) {
-                        line = sr.ReadLine();
+                    while (ol < (rl * gap))
+                    {
+
+                        line_new = sr.ReadLine();
+                        if (line_new == null)
+                            break;
+                        line = line_new;
                         ol++;
                     }
-
-                    line = sr.ReadLine();
+                    //  
                     if (radioButton1.Checked)
                         sw.WriteLine(line);
                     else
                     {
-                        if (line != null)
-                        {
-                            String[] split = line.Split('\t');
-
-                            sw.WriteLine(split[1]);
-                        }
+                        String[] split = line.Split('\t');
+                        sw.WriteLine(split[1]);
                     }
+                    line = sr.ReadLine();
                     rl++;
                 }
 
